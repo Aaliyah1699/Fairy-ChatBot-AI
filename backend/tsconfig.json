@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
     "outDir": "build",
-    "module": "commonjs",
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
+    "module": "commonjs", 
     "esModuleInterop": true,
-    "target": "es6",
+    "allowSyntheticDefaultImports": true,  
+    "target": "es6",                          
+    "moduleResolution": "node",
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["src/components/*"]
+      "@/components/*": ["src/components/*"] 
     }
   },
-  "include": ["src/**/*.ts" , "src/index.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"] 
 }

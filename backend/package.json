@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q build/index.js\" ",
     "start": "node build/index.js",
-    "build": "tsc" 
+    "build": "tsc"
   },
   "author": "Aaliyah Montgomery",
   "license": "ISC",
