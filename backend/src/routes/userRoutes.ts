@@ -1,13 +1,13 @@
 import express from 'express';
 const router = express.Router();
 import {
-    getAllUsers,
-    userSignUp,
-    userLogin,
-    verifyUser,
-    userLogout,
+  getAllUsers,
+  userSignUp,
+  userLogin,
+  verifyUser,
+  userLogout,
 } from '../controllers/userController.js';
-import { verifyToken } from '../utils/generateToken.js';
+import {verifyToken} from '../utils/generateToken.js';
 
 router.get('/', getAllUsers);
 router.post('/signup', userSignUp);
