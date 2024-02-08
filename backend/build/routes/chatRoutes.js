@@ -4,10 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const generateToken_1 = require("../utils/generateToken");
-const chatController_1 = require("../controllers/chatController");
+const generateToken_js_1 = require("../utils/generateToken.js");
+const chatController_js_1 = require("../controllers/chatController.js");
 const router = express_1.default.Router();
-router.post('/new', generateToken_1.verifyToken, chatController_1.generateChatCompletion);
-router.get('/all-chats', generateToken_1.verifyToken, chatController_1.sendChatsToUser);
-router.delete('/delete', generateToken_1.verifyToken, chatController_1.deleteChats);
+router.post('/new', generateToken_js_1.verifyToken, chatController_js_1.generateChatCompletion);
+router.get('/all-chats', generateToken_js_1.verifyToken, chatController_js_1.sendChatsToUser);
+router.delete('/delete', generateToken_js_1.verifyToken, chatController_js_1.deleteChats);
 exports.default = router;
+//# sourceMappingURL=chatRoutes.js.map

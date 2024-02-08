@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -8,20 +17,20 @@ const bcrypt_1 = require("bcrypt");
 const UserModel_js_1 = __importDefault(require("../models/UserModel.js"));
 const constants_js_1 = require("../utils/constants.js");
 const generateToken_js_1 = require("../utils/generateToken.js");
-const getAllUsers = async (req, res) => {
-    const users = await UserModel_js_1.default.find({});
+const getAllUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const users = yield UserModel_js_1.default.find({});
     res.status(200).json({ users });
-};
+});
 exports.getAllUsers = getAllUsers;
-const userSignUp = async (req, res) => {
+const userSignUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, email, password } = req.body;
-        const userExist = await UserModel_js_1.default.findOne({ email });
+        const userExist = yield UserModel_js_1.default.findOne({ email });
         if (userExist) {
             return res.status(400).json({ error: 'User already exists' });
         }
         const user = new UserModel_js_1.default({ name, email, password });
-        await user.save();
+        yield user.save();
         res.clearCookie(constants_js_1.COOKIE_NAME, {
             path: '/',
             domain: 'localhost',
@@ -48,16 +57,16 @@ const userSignUp = async (req, res) => {
         console.error(error);
         return res.status(400).json({ message: error });
     }
-};
+});
 exports.userSignUp = userSignUp;
-const userLogin = async (req, res) => {
+const userLogin = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { email, password } = req.body;
-        const user = await UserModel_js_1.default.findOne({ email });
+        const user = yield UserModel_js_1.default.findOne({ email });
         if (!user) {
             return res.status(401).send('User not registered');
         }
-        const comparePassword = await (0, bcrypt_1.compare)(password, user.password);
+        const comparePassword = yield (0, bcrypt_1.compare)(password, user.password);
         if (!comparePassword) {
             return res.status(403).send('Invalid email or password');
         }
@@ -86,11 +95,11 @@ const userLogin = async (req, res) => {
     catch (error) {
         return res.status(401).json({ message: error });
     }
-};
+});
 exports.userLogin = userLogin;
-const verifyUser = async (req, res) => {
+const verifyUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const user = await UserModel_js_1.default.findById(res.locals.jwtData.id);
+        const user = yield UserModel_js_1.default.findById(res.locals.jwtData.id);
         if (!user) {
             return res.status(401).send('User not registered or token malfunctioned');
         }
@@ -106,11 +115,11 @@ const verifyUser = async (req, res) => {
     catch (error) {
         return res.status(401).json({ message: error });
     }
-};
+});
 exports.verifyUser = verifyUser;
-const userLogout = async (req, res) => {
+const userLogout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const user = await UserModel_js_1.default.findById(res.locals.jwtData.id);
+        const user = yield UserModel_js_1.default.findById(res.locals.jwtData.id);
         if (!user) {
             return res.status(401).send('User not registered or token malfunctioned');
         }
@@ -128,5 +137,6 @@ const userLogout = async (req, res) => {
     catch (error) {
         return res.status(401).json({ message: error });
     }
-};
+});
 exports.userLogout = userLogout;
+//# sourceMappingURL=userController.js.map

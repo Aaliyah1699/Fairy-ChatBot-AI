@@ -13,3 +13,4 @@ router.post('/login', userController_js_1.userLogin);
 router.get('/auth-status', generateToken_js_1.verifyToken, userController_js_1.verifyUser);
 router.get('/logout', generateToken_js_1.verifyToken, userController_js_1.userLogout);
 exports.default = router;
+//# sourceMappingURL=userRoutes.js.map
