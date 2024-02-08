@@ -6,7 +6,11 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "target": "es6",
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"]
+    }
   },
   "include": ["src/**/*.ts" , "src/index.ts"]
 }
