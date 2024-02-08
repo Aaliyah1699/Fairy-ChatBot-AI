@@ -1,12 +1,13 @@
 {
   "name": "backend",
+  "type": "module",
   "version": "1.0.0",
   "description": "MERN AI Chatbot app made with typescript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q build/index.js\" ",
-    "start": "node ./build/index.js",
+    "start": "node build/index.js",
     "build": "tsc" 
   },
   "author": "Aaliyah Montgomery",

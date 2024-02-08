@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "build",
-    "module": "Node16",
+    "module": "commonjs",
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node16",
-    "esModuleInterop": true
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "target": "es6",
+    "sourceMap": true
   },
   "include": ["src/**/*.ts" , "src/index.ts"]
 }

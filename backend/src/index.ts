@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import userRoutes from './routes/userRoutes.js';
 import chatRoutes from './routes/chatRoutes.js';
-import {connectDB} from './db/connect';
+import {connectDB} from './db/connect.js';
 import cors from 'cors';
 
 config();
