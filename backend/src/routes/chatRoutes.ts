@@ -1,10 +1,10 @@
 import express from 'express';
-import {verifyToken} from '../utils/generateToken';
+import {verifyToken} from '../utils/generateToken.js';
 import {
   deleteChats,
   generateChatCompletion,
   sendChatsToUser,
-} from '../controllers/chatController';
+} from '../controllers/chatController.js';
 
 const router = express.Router();
 

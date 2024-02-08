@@ -1,6 +1,6 @@
 import {Response, Request} from 'express';
-import User from '../models/UserModel';
-import {configureOpenAI} from '../config/openai-config';
+import User from '../models/UserModel.js';
+import {configureOpenAI} from '../config/openai-config.js';
 import { ChatCompletionMessageParam } from 'openai/resources/index.mjs';
 
 export const generateChatCompletion = async (req: Request, res: Response) => {
