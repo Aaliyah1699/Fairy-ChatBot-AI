@@ -1,6 +1,6 @@
 # Fairy GodBot
 
-Welcome to Fairy GodBot, your magical companion for all your queries and whimsical conversations! 🧚‍♂️✨
+Welcome to Fairy GodBot, your magical companion for all your queries and whimsical conversations! 🧚🏾‍♀️✨ [Chat your Fairy GodBot]()
 
 ## Overview
 
@@ -30,4 +30,4 @@ Fairy GodBot is a captivating MERN full-stack application with a sprinkle of Typ
 -   **POST:** Cast your queries and receive enchanting replies.
 -   **DELETE:** Wave your wand to erase previous conversations and start anew.
 
- **Created By Aaliyah Montgomery 💜**
+**Created By Aaliyah Montgomery 💜**
