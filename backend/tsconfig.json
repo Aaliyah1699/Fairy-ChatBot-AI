@@ -2,9 +2,10 @@
     "compilerOptions": {
         "module": "Node16",
         "moduleResolution": "Node16",
+        "esModuleInterop": true,
         "target": "ES2022",
         "sourceMap": true,
-        "outDir": "dist",
+        "outDir": "./dist",
         "allowSyntheticDefaultImports": true
     },
     "include": ["src/**/*.ts", "src/app.ts", "src/index.ts"]
