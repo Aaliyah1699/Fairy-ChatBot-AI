@@ -210,6 +210,7 @@ const Chat = () => {
                         backgroundColor: '#A596AD',
                         display: 'flex',
                         margin: 'auto',
+                        marginTop: '10px',
                     }}
                 >
                     <input
