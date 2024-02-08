@@ -1,6 +1,6 @@
 # Fairy GodBot
 
-Welcome to Fairy GodBot, your magical companion for all your queries and whimsical conversations! 🧚🏾‍♀️✨ [Chat your Fairy GodBot]()
+Welcome to Fairy GodBot, your magical companion for all your queries and whimsical conversations! 🧚🏾‍♀️✨
 
 ## Overview
 
