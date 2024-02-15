@@ -6,10 +6,13 @@ import userRoutes from './routes/userRoutes.js';
 import chatRoutes from './routes/chatRoutes.js';
 import {connectDB} from './db/connect.js';
 import cors from 'cors';
+import path from 'path';
+
 
 config();
 const app = express();
 const port = process.env.PORT || 4000;
+const __dirname = path.resolve();
 
 // Middleware
 app.use(cors({origin: 'http://localhost:5173', credentials: true}));
@@ -20,6 +23,12 @@ app.use(morgan('dev')); // for development
 // Routes
 app.use('/api/user', userRoutes);
 app.use('/api/chat', chatRoutes);
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
+
 
 app.get('/', (req, res) => {
   res.send('Api is running...');
