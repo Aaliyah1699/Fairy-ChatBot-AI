@@ -24,9 +24,9 @@ app.use(morgan('dev')); // for development
 app.use('/api/user', userRoutes);
 app.use('/api/chat', chatRoutes);
 
-app.use(express.static(path.join(__dirname, '/client/dist')));
+app.use(express.static(path.join(__dirname, '/frontend/dist')));
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
 });
 
 
