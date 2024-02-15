@@ -2,6 +2,8 @@
 
 Welcome to Fairy GodBot, your magical companion for all your queries and whimsical conversations! 🧚🏾‍♀️✨
 
+# Check out my [Portfolio💜](https://aaliyahm-portfolio.netlify.app/) 
+
 ## Overview
 
 Fairy GodBot is a captivating MERN full-stack application with a sprinkle of TypeScript magic both in the frontend and backend. Our enchanting AI chatbot, powered by the magnificent OpenAI Model - GPT 3.5 Turbo API, eagerly awaits your questions and conversations.
