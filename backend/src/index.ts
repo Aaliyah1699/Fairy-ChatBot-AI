@@ -6,6 +6,7 @@ import userRoutes from './routes/userRoutes.js';
 import chatRoutes from './routes/chatRoutes.js';
 import cors from 'cors';
 import path from 'path';
+import { connectDB } from './db/connect.js';
 
 
 config();
@@ -36,7 +37,10 @@ app.get('/', (req, res) => {
 // Connection
 const start = async () => {
   try {
-    app.listen(port, () => console.log(`server listening on port ${port}`));
+    connectDB().then(() => {
+      app.listen(port, () => console.log(`server listening on port ${port}`));
+    })
+    
   } catch (error) {
     console.log(error);
   }

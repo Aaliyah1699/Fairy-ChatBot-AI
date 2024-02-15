@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+import {connect, disconnect} from 'mongoose';
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await connect(process.env.MONGO_URI);
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(`Error: ${error}`);
@@ -12,7 +12,7 @@ const connectDB = async () => {
 
 const disconnectDB = async () => {
   try {
-    await mongoose.disconnect();
+    await disconnect();
   } catch (error) {
     console.log(`Error: ${error}`);
     throw new Error(' Could not disconnect db.');
