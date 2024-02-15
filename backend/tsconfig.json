@@ -1,16 +1,14 @@
 {
   "compilerOptions": {
     "outDir": "build",
-    "module": "commonjs", 
+    "skipLibCheck": true,
+    "module": "NodeNext", 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,  
     "target": "es6",                          
-    "moduleResolution": "node",
     "sourceMap": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/components/*": ["src/components/*"] 
-    }
+     "noEmit": true,
+     "types": ["node"],
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"] 

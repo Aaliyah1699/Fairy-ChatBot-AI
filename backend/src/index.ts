@@ -12,7 +12,7 @@ import { connectDB } from './db/connect.js';
 config();
 const app = express();
 const port = process.env.PORT || 4000;
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 // Middleware
 app.use(cors({origin: 'http://localhost:5173', credentials: true}));
