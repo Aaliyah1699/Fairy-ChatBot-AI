@@ -4,7 +4,6 @@ import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import userRoutes from './routes/userRoutes.js';
 import chatRoutes from './routes/chatRoutes.js';
-import {connectDB} from './db/connect.js';
 import cors from 'cors';
 import path from 'path';
 
@@ -37,7 +36,6 @@ app.get('/', (req, res) => {
 // Connection
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
     app.listen(port, () => console.log(`server listening on port ${port}`));
   } catch (error) {
     console.log(error);
